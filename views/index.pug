@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1= title 
+  p Estimate your risk of breaking a bone 
+  p 100% automatically – in 5 seconds – without a single click
+  
+  div(class="dropzone", id="medai-file-upload", action="/file-upload")
+
+  p
+    label(style={color: 'black', 'font-weight': 'normal'}) Please upload your XRay in JPEG, JPG, or PNG format. 
+  p 
+    label(style={color: 'gray', 'font-weight': 'normal'}) By uploading an image or URL you agree to our Terms of Service. This site is protected by the MedAI Privacy Policy and Terms of Service apply.
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

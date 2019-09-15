@@ -8,44 +8,51 @@ block content
     <h1>Osteoporosis detector</h1>
     <p>Upload your X-Ray Image and estimate your risk of breaking a bone 100% automatically in a few seconds and prevent it during later years in life </p>
   </div>
-
-  form(method='POST', class="form-horizontal", action="/file-upload", id='fileUploadForm')
-    <fieldset>
-      div.form-group
-      <legend>Upload XRay</legend>
-      <div class="form-group">
-        <label for="xrayFile" class="col-lg-2 control-label">XRay</label>
-        <div class="col-lg-10">
-          <input type="file" class="form-control" id="xrayFile" placeholder="xrayFile">
-          <span class="help-block"> Please use JPG, PNG, GIF format of XRay Images </span>
+  p
+  
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="well bs-component">
+        form(method='POST', class="form-horizontal", enctype="multipart/form-data", id='fileUploadForm')
+          <fieldset>
+            div.form-group
+            <legend>Upload XRay</legend>
+            div.flex              
+              div#profilePict.flex-child()                    
+                  input(type="file", name="profilePict", class="form-control", data-label='Xray File', required, accept="image/*")   
+                  <span class="help-block"> Please use JPG, PNG, GIF format of XRay Images </span>                 
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+              <div class="col-lg-10">
+                <input type="text" name="inputEmail" class="form-control" data-label='Input Email' id="inputEmail" placeholder="Email id where you wish report to be sent to." required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="col-lg-2 control-label">Phone</label>
+              <div class="col-lg-10">
+                <input type="text" name="phone" class="form-control" data-label='Phone Number' id="phone" placeholder="Enter Phone Number" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" id="form-submit" class="btn btn-primary">Detect</button>
+              </div>
+          </div>
+          </fieldset>
+          <p class="text-muted">By uploading an image or URL you agree to our Terms of Service. This site is protected by the medtatva Privacy Policy and Terms of Service apply.</p>
         </div>
       </div>
-      <div class="form-group">
-        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-        <div class="col-lg-10">
-          <input type="text" class="form-control" id="inputEmail" placeholder="Email id where you wish report to be sent to.">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="phone" class="col-lg-2 control-label">Phone</label>
-        <div class="col-lg-10">
-          <input type="text" class="form-control" id="phone" placeholder="Enter Phone Number">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
-          <button type="submit" class="btn btn-primary">Detect</button>
-        </div>
     </div>
-    </fieldset>
   
-  <p class="text-muted">By uploading an image or URL you agree to our Terms of Service. This site is protected by the medtatva Privacy Policy and Terms of Service apply.</p>
-  
-  <div class="list-group">
-    <a href="#" class="list-group-item">
-      <h4 class="list-group-item-heading">How It Works</h4>
-      <p class="list-group-item-text">Send us your Xray Image, and we will predict your fracture risk instantly. Our orthopaedists-trained AI system will not only detect osteoporosis, but also predict fracture risk. At only 1/10th the cost, you can detect and prevent osteoporosis during later years in life.</p>
-    </a>
+  <div class="row">
+    <div class="col-lg-6">    
+      <div class="list-group">
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">How It Works</h4>
+          <p class="list-group-item-text">Send us your Xray Image, and we will predict your fracture risk instantly. Our orthopaedists-trained AI system will not only detect osteoporosis, but also predict fracture risk. At only 1/10th the cost, you can detect and prevent osteoporosis during later years in life.</p>
+        </a>
+      </div>
+    </div>
   </div>
 
   
